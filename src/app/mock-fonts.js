@@ -3,8 +3,8 @@ import { Font } from './font';
 export const FONTS: Font[] = [
   { id: 1054,
     name: 'Zone23 Hiromi',
-	img: '/f2/images/zone23hiromi.gif', 
-	zip: '/f2/zips/zone23hiromi.zip',
+	img: '/f2/images/zone23hiromi', 
+	zip: '/f2/zips/zone23hiromi',
 	dingbat:0;
   },
   { id: 1058,
