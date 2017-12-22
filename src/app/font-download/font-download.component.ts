@@ -10,7 +10,7 @@ import { FontService } from '../font.service';
   styleUrls: ['./font-download.component.css']
 })
 
-export class HeroDetailComponent implements OnInit {
+export class FontDownloadComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,

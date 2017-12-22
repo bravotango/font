@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Font } from '../font';
-import { DashboardComponent }   from './dashboard/dashboard.component';
 
 @Component({
   selector: 'app-dashboard',

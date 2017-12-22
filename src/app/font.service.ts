@@ -5,7 +5,6 @@ import { of } from 'rxjs/observable/of';
 
 import { Font } from './font';
 import { FONTS } from './mock-fonts';
-
 import { MessageService } from './message.service';
 
 @Injectable()
@@ -14,9 +13,9 @@ export class FontService {
 
   constructor(private messageService: MessageService) { }
 
-  getFonts(): Observable<Font[]> {
+  getFont(id): Observable<Font[]> {
     // Todo: send the message _after_ fetching the fonts
-    this.messageService.add('FontService: fetched fonts');
+    this.messageService.add('FontService: fetched font id: ' + id);
     return of(FONTS);
   }
 }

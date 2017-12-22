@@ -4,15 +4,16 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { ListComponent }      from './list/list.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
-import { FontDownloadComponent } from './font-download.component';
+import { FontDownloadComponent } from './font-download/font-download.component';
 import { FontComponent } from './font/font.component';
 import { MessagesComponent } from './messages/messages.component';
 
 import { FontService } from './font.service';
+import { MessageService } from './message.service';
 
 @NgModule({
   declarations: [
