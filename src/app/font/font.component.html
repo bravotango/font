@@ -1,3 +1,21 @@
-<p>
-  font works!
-</p>
+<h2>My Fonts</h2>
+<ul class="fonts">
+  <li *ngFor="let font of fonts"
+    [class.selected]="font === selectedFont"
+    (click)="onSelect(font)">
+    <span class="badge">{{font.id}}</span> {{font.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedFont">
+ 
+
+  <h2>{{ selectedFont.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedFont.id}}</div>
+  <div>
+    <label>name:
+     
+    </label>
+  </div>
+ 
+</div>
