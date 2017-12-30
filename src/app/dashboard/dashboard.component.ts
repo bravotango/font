@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Font } from '../font';
 import { FONTS } from '../mock-fonts';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

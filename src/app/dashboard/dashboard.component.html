@@ -1,12 +1,33 @@
 <div class="row">
-	<div class="col-md-6 col-lg-4" *ngFor="let font of fonts">
-		<h2>{{ font.name | uppercase }}</h2>
-		<a href="{{font.zip}}" ng-title="font.name | uppercase" ng-click="logDownload( font.id )"> 
-		<img src="//www.btgraphix.com{{font.img}}" alt="download zip file" width="150" height="40">
-		</a>
-	</div>
+<button mat-icon-button [matMenuTriggerFor]="menu">
+sdf
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <span>Redial</span>
+  </button>
+  <button mat-menu-item disabled>
+    <span>Check voicemail</span>
+  </button>
+  <button mat-menu-item>
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>
 </div>
 
-
-<button mat-button md-raised-button>foo</button>
-
+<div class="row">
+	<div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let font of fonts">
+	<mat-card>
+		<mat-card-header>
+			<mat-card-title>
+				<a href="//www.btgraphix.com{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )">{{font.name}}</a>
+			</mat-card-title>
+		</mat-card-header>
+	
+		<a href="//www.btgraphix.com{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )"> 
+			<img src="//www.btgraphix.com{{font.img}}" alt="download zip file" width="150" height="40">
+		</a>
+		
+	</mat-card>
+	</div>
+</div>
