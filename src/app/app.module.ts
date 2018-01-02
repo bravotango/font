@@ -18,6 +18,8 @@ import { MatCheckboxModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 @NgModule({
   declarations: [
@@ -32,9 +34,9 @@ import { MatCardModule } from '@angular/material/card';
     NgbModule.forRoot(),
 	AppRoutingModule,
 	BrowserAnimationsModule,
-	MatCheckboxModule, MatButtonModule, MatMenuModule, MatCardModule
+	MatCheckboxModule, MatButtonModule, MatMenuModule, MatCardModule,MatToolbarModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule, MatToolbarModule],
   providers: [FontService, MessageService],
   bootstrap: [AppComponent]
 })

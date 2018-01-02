@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Font } from '../font';
 import { FONTS } from '../mock-fonts';
+import { Navigation } from '../main-navigation';
 
 
 @Component({
@@ -9,6 +10,8 @@ import { FONTS } from '../mock-fonts';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+navigation=[{character:'a'},{character: 'b'},{character: 'c'},{character: 'd'},{character: 'e'},{character: 'f'},{character: 'g'},{character: 'h'},{character: 'i'},{character: 'j'},{character: 'k'},{character: 'l'},{character: 'm'},{character: 'n'},{character: 'o'},{character: 'p'},{character: 'q'},{character: 'r'},{character: 's'},{character: 't'},{character: 'u'},{character: 'v'},{character: 'w'},{character: 'x'},{character: 'y'},{character: 'z'}];
 
 
 fonts:Font[] = [
