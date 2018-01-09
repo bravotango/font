@@ -1,9 +1,10 @@
 import {Observable} from 'rxjs/Rx';
 
 export class Font {
-  id: number;
+  id: string;
   name: string;
   img: string;
   zip: string;
-  dingbat:number;
+  dingbat:string;
 }
+

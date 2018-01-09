@@ -15,9 +15,13 @@ export class FontService {
 
   constructor(private messageService: MessageService) { }
 
-  getFont(id): Observable<Font[]> {
+  getFonts(): Observable<Font[]> {
     // Todo: send the message _after_ fetching the fonts
-    //this.messageService.add('FontService: fetched font id: ' + id);
+    this.messageService.add('FontService: fetched fonts');
+	
+	
+
+
     return of(FONTS);
   }
 }

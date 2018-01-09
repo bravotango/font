@@ -41,4 +41,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+
+	}

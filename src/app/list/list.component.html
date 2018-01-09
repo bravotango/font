@@ -1,4 +1,20 @@
 <h2>List</h2>
-<p>
-  List goes here
-</p>
+
+<button type="button" class="btn-alphabet btn btn-default" ng-repeat="letter in alphabet" ng-click="setActiveLetter(letter)" ng-class="{'btn-primary': letter==activeLetter}">{{letter}}</button>
+
+<div class="row">
+	<div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let font of fonts">
+	<mat-card>
+		<mat-card-header>
+			<mat-card-title>
+				<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )">{{font.name}}</a>
+			</mat-card-title>
+		</mat-card-header>
+	
+		<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )"> 
+			<img src="//www.btgraphix.com/f2/images/{{font.img}}" alt="download zip file" width="150" height="40">
+		</a>
+		
+	</mat-card>
+	</div>
+</div>

@@ -7,18 +7,16 @@ import { FONTS } from '../mock-fonts';
   templateUrl: './font.component.html',
   styleUrls: ['./font.component.css'],
 })
-export class FontComponent implements OnInit {
 
-  fonts = FONTS;
+export class FontComponent implements OnInit {
  
-  selectedFont: Font;
+  fonts = FONTS;
+
  
   constructor() { }
  
   ngOnInit() {
   }
  
-  onSelect(font: Font): void {
-    this.selectedFont = font;
-  }
+
 }
