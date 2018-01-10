@@ -20,8 +20,7 @@ export class FontService {
     this.messageService.add('FontService: fetched fonts');
 	
 	
-
-
+    //return filtered FONTS by: random, number, dingbat, a, b, c, d, e, f ...
     return of(FONTS);
   }
 }
