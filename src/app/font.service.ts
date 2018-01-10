@@ -21,6 +21,9 @@ export class FontService {
 	
 	
     //return filtered FONTS by: random, number, dingbat, a, b, c, d, e, f ...
+	
+	//https://stackoverflow.com/questions/34164413/how-to-apply-filters-to-ngfor
+	
     return of(FONTS);
   }
 }
