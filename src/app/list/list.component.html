@@ -1,4 +1,10 @@
-<h2>List</h2>
+<h2>Font List</h2>
+
+<div  class="font-navigation">
+	<span *ngFor="let font of navigation">
+	<button mat-icon-button><span class="mat-button-wrapper">{{font}}</span></button>
+	</span>
+</div>
 
 <button type="button" class="btn-alphabet btn btn-default" ng-repeat="letter in alphabet" ng-click="setActiveLetter(letter)" ng-class="{'btn-primary': letter==activeLetter}">{{letter}}</button>
 
