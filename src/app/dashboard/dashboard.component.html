@@ -1,9 +1,13 @@
+<h2>Dashboard</h2>
+<mat-chip-list>
+	<div *ngFor="let filterString of filters">
 
-<div  class="font-navigation">
-	<span *ngFor="let font of navigation">
-	<button mat-icon-button><span class="mat-button-wrapper">{{font}}</span></button>
-	</span>
-</div>
+		<!-- bind this to controller, so it works as single page application ... (click)=filterList(filterString)-->
+		<mat-chip><a href="list/{{filterString}}">{{filterString}}</a></mat-chip>
+		
+		<a href="list/{{filterString}}">{{filterString}}</a>
+	</div>
+</mat-chip-list>
 
 <div class="row">
 	<div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let font of fonts">

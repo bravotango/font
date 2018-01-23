@@ -10,6 +10,8 @@ import { FONTS } from '../mock-fonts';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  
+  filters = "random,dingbat,number,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".split(",");
 
   fonts : Font[];
   constructor(    
@@ -21,7 +23,7 @@ export class ListComponent implements OnInit {
   }
   getList(): void {
 
-    const string = +this.route.snapshot.paramMap.get('string');
+    const string = this.route.snapshot.paramMap.get('char');
 
     this.fontService.getList(string.toString().toUpperCase())
         .subscribe(fonts => this.fonts = fonts);

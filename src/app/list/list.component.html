@@ -1,12 +1,17 @@
 <h2>Font List</h2>
 
-<div  class="font-navigation">
-	<span *ngFor="let font of navigation">
-	<button mat-icon-button><span class="mat-button-wrapper">{{font}}</span></button>
-	</span>
-</div>
+<mat-chip-list>
+	<div *ngFor="let font of filters">
+		<mat-chip><a href="list/{{font}}">{{font}}</a></mat-chip>
+	</div>
+</mat-chip-list>
 
-<button type="button" class="btn-alphabet btn btn-default" ng-repeat="letter in alphabet" ng-click="setActiveLetter(letter)" ng-class="{'btn-primary': letter==activeLetter}">{{letter}}</button>
+
+<mat-chip-list>
+		<div *ngFor="let font of filters">
+			<a href="list/{{font}}">{{font}}</a> &nbsp;
+		</div>
+</mat-chip-list>
 
 <div class="row">
 	<div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let font of fonts">
