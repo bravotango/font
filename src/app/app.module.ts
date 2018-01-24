@@ -14,7 +14,7 @@ import { MessagesComponent } from './messages/messages.component';
 
 import { FontService } from './font.service';
 import { MessageService } from './message.service';
-import { MatCheckboxModule, MatButtonToggleGroup } from '@angular/material';
+import { MatCheckboxModule, MatButtonToggleGroup, MatIcon, MatIconModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
@@ -36,9 +36,9 @@ import { MatChipsModule } from '@angular/material';
     NgbModule.forRoot(),
 	AppRoutingModule,
 	BrowserAnimationsModule,
-	MatCheckboxModule, MatButtonModule, MatMenuModule, MatCardModule,MatToolbarModule,MatChipsModule
+	MatCheckboxModule, MatButtonModule, MatMenuModule, MatCardModule,MatToolbarModule,MatChipsModule,MatIconModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule, MatToolbarModule,MatChipsModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule, MatToolbarModule,MatChipsModule,MatIconModule],
   providers: [FontService, MessageService],
   bootstrap: [AppComponent]
 })
