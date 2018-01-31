@@ -3,37 +3,19 @@
 <mat-chip-list>
 	<div *ngFor="let font of filters">
 		<a href="list/{{font}}">{{font}}</a>
-		<div>{{font}}</div>
 	</div>
 
 	<ul class="filters">
-		<li *ngFor="let filter of filters"
+		<li class="badge" *ngFor="let filter of filters"
 		  [class.selected]="filter === selectedFilter"
 		  (click)="filterFontsByFilter(filter);onSelect(filter);">
 		  {{filter}}
 		</li>
-	  </ul>
+	</ul>
 
 
 </mat-chip-list>
 
-
-<mat-chip-list class="button-row">
-		<div *ngFor="let font of filters">
-
-			<button class="mat-icon-button" mat-icon-button="">
-					<span class="mat-button-wrapper">{{font}}</span>
-					<div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
-					</button>
-		</div>
-</mat-chip-list>
-
-<div class="button-row">
-	<button class="mat-icon-button" mat-icon-button="">
-		<span class="mat-button-wrapper">a</span>
-		<div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
-		</button>
-	</div>
 
 
 <div class="row">

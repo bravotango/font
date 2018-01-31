@@ -17,27 +17,24 @@ export class FontService {
 
   getFonts(): Observable<Font[]> {
     // Todo: send the message _after_ fetching the fonts
-    this.messageService.add('FontService: fetched fonts');
+    this.messageService.add('getFonts: entered');
 	
     return of(FONTS);
   }
 
   getList(string): Observable<Font[]> {
     // Todo: send the message _after_ fetching the fonts
-    this.messageService.add('FontService: fetching list');
+    this.messageService.add('getList: entered');
 	
 	  this.filteredFonts = this.filterFonts(string);
-    //return filtered FONTS by: random, number, dingbat, a, b, c, d, e, f ...
-	
-	//https://stackoverflow.com/questions/34164413/how-to-apply-filters-to-ngfor
-	
+ 
     return of(this.filteredFonts);
   }
 
-  filterFonts(char:string){
+  filterFonts(string:string){
     //if font.name starts with matching parameter 'char' add to array
-
-  return FONTS.filter(FONTS => FONTS.name[0].toUpperCase().indexOf(char) !== -1);
+    this.messageService.add('filterFonts: filtered by ' + string);
+    return FONTS.filter(FONTS => FONTS.name[0].toUpperCase().indexOf(string) !== -1);
 
  //   return (fFonts)
   }
