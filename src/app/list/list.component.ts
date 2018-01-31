@@ -29,4 +29,10 @@ export class ListComponent implements OnInit {
         .subscribe(fonts => this.fonts = fonts);
   }
 
+  filterFontsByFilter(filter):void {
+    this.fontService.getList(filter.toString().toUpperCase())
+        .subscribe(fonts => this.fonts = fonts);
+  
+  }
+
 }
