@@ -23,7 +23,7 @@
   .filters li:hover {
     color: #fff;
     background-color: rgb(94, 0, 0);
-    padding: .35em .5em;
+    padding: .35em .5em .5em .5em;
     height:1.95em;
   }
   .filters .text {
