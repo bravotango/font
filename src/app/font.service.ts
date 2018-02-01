@@ -25,7 +25,7 @@ export class FontService {
 
   getList(string): Observable<Font[]> {
 
-    const defaultNumberOfRandomFontsCount = 12;
+    const defaultNumber = 16;
 
     // Todo: send the message _after_ fetching the fonts
     this.messageService.add('getList: entered');
@@ -40,7 +40,7 @@ export class FontService {
       this.filteredFonts = this.filterFontsByAttributeDingbatTrue();
     } 
     if (string=="RANDOM") {
-      this.filteredFonts = this.getRequestedNumberOfFonts(defaultNumberOfRandomFontsCount);
+      this.filteredFonts = this.getRequestedNumberOfFonts(defaultNumber);
     } 
 
     return of(this.filteredFonts);
