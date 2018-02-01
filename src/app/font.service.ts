@@ -32,7 +32,14 @@ export class FontService {
     } 
     if (string=="NUMBER") {
       this.filteredFonts = this.filterFontsByStartsWithNumber();
-      } 
+    }     
+    if (string=="DINGBAT") {
+      this.filteredFonts = this.filterFontsByAttributeDingbatTrue();
+    } 
+    if (string=="RANDOM") {
+      this.filteredFonts = this.getRequestedNumberOfFonts(32);
+    } 
+    
 
     return of(this.filteredFonts);
   }
@@ -45,9 +52,45 @@ export class FontService {
   }
 
   filterFontsByStartsWithNumber(){
-    //if font.name starts with matching parameter 'char' add to array
-    this.messageService.add('filterFontsByStartsWithNumber: filtered by a number');
+    //if font.name starts a number
+    this.messageService.add('filterFontsByStartsWithNumber: filtered by number');
     return FONTS.filter(FONTS => FONTS.name[0].match(/^\d/));
 
   }
+
+  filterFontsByAttributeDingbatTrue(){
+    //if font.dingbat it true
+    this.messageService.add('filterFontsByAttributeDingbatTrue: filtered by dingbat');
+    return FONTS.filter(FONTS => FONTS.dingbat=="1");
+
+  }
+
+  getRequestedNumberOfFonts(requestedNumberOfFonts){
+    //if font.dingbat it true
+    this.messageService.add('getRequestedNumberOfFonts: ' + requestedNumberOfFonts);
+
+    //get font count
+    var fontCount = FONTS.length;
+    //create array, add random numbers to array up to 'requestedNumberOfFonts'
+
+    var randomFonts = [];
+    var randomNumber = -1;
+    for (var i = 0; i < requestedNumberOfFonts; i++) {
+      randomNumber = this.getRandomArbitrary(0,fontCount);
+      randomFonts.push(FONTS[randomNumber]);
+    }
+ 
+
+    //return FONTS.filter(FONTS => FONTS.dingbat=="1");
+    return randomFonts;
+  }
+
+  getRandomArbitrary(min, max) {
+    this.messageService.add('getRandomArbitrary: ' + 'min: ' + min + ', max: ' + max);
+    var randomNumber = Math.trunc(Math.random() * (max - min) + min);
+
+    this.messageService.add('getRandomArbitrary: ' + 'randomNumber: ' + randomNumber);
+    return randomNumber;
+  }
+
 }
