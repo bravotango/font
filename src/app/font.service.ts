@@ -24,6 +24,9 @@ export class FontService {
   }
 
   getList(string): Observable<Font[]> {
+
+    const defaultNumberOfRandomFontsCount = 12;
+
     // Todo: send the message _after_ fetching the fonts
     this.messageService.add('getList: entered');
   
@@ -37,9 +40,8 @@ export class FontService {
       this.filteredFonts = this.filterFontsByAttributeDingbatTrue();
     } 
     if (string=="RANDOM") {
-      this.filteredFonts = this.getRequestedNumberOfFonts(32);
+      this.filteredFonts = this.getRequestedNumberOfFonts(defaultNumberOfRandomFontsCount);
     } 
-    
 
     return of(this.filteredFonts);
   }
@@ -76,20 +78,17 @@ export class FontService {
     var randomFonts = [];
     var randomNumber = -1;
     for (var i = 0; i < requestedNumberOfFonts; i++) {
-      randomNumber = this.getRandomArbitrary(0,fontCount);
+      randomNumber = this.getRandomFontArrayPosition(0,fontCount);
       randomFonts.push(FONTS[randomNumber]);
     }
- 
 
     //return FONTS.filter(FONTS => FONTS.dingbat=="1");
     return randomFonts;
   }
 
-  getRandomArbitrary(min, max) {
-    this.messageService.add('getRandomArbitrary: ' + 'min: ' + min + ', max: ' + max);
+  getRandomFontArrayPosition(min, max) {
     var randomNumber = Math.trunc(Math.random() * (max - min) + min);
-
-    this.messageService.add('getRandomArbitrary: ' + 'randomNumber: ' + randomNumber);
+    this.messageService.add(' - getRandomFontArrayPosition: ' + randomNumber);
     return randomNumber;
   }
 
