@@ -54,14 +54,14 @@ export class FontService {
   }
 
   filterFontsByStartsWithNumber(){
-    //if font.name starts a number
+    //if font.name starts with a number
     this.messageService.add('filterFontsByStartsWithNumber: filtered by number');
     return FONTS.filter(FONTS => FONTS.name[0].match(/^\d/));
 
   }
 
   filterFontsByAttributeDingbatTrue(){
-    //if font.dingbat it true
+    //if font.dingbat is true
     this.messageService.add('filterFontsByAttributeDingbatTrue: filtered by dingbat');
     return FONTS.filter(FONTS => FONTS.dingbat=="1");
 
