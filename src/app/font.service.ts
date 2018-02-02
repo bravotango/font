@@ -25,7 +25,7 @@ export class FontService {
 
   getList(string): Observable<Font[]> {
 
-    const defaultNumber = 16;
+    const defaultNumber = 12;
 
     // Todo: send the message _after_ fetching the fonts
     this.messageService.add('getList: entered');
