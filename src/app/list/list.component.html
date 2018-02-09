@@ -17,20 +17,16 @@
 </mat-chip-list>
 
 
-
-<div class="row">
-	<div *ngFor="let font of fonts">
-	<mat-card>
-		<mat-card-header>
-			<mat-card-title>
+	<mat-grid-list cols="5" rowHeight="2.5:2" gutterSize="2">
+			<div  *ngFor="let font of fonts">
+		<mat-grid-tile>
+			<mat-grid-tile-header>
 				<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )">{{font.name}}</a>
-			</mat-card-title>
-		</mat-card-header>
+			</mat-grid-tile-header>
 
 			<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )"> 
 				<img src="http://www.btgraphix.com/f2/images/{{font.img}}" alt="download zip file" width="150" height="40">
 			</a>
-
-	</mat-card>
+		</mat-grid-tile>
 	</div>
-</div>
+	</mat-grid-list>
