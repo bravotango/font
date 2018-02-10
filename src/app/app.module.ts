@@ -19,7 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatChipsModule } from '@angular/material';
+import { MatChipsModule,MatGridListModule} from '@angular/material';
 
 
 
@@ -36,9 +36,9 @@ import { MatChipsModule } from '@angular/material';
     NgbModule.forRoot(),
 	AppRoutingModule,
 	BrowserAnimationsModule,
-	MatCheckboxModule, MatButtonModule, MatMenuModule, MatCardModule,MatToolbarModule,MatChipsModule,MatIconModule
+	MatCheckboxModule, MatButtonModule, MatMenuModule, MatCardModule,MatToolbarModule,MatChipsModule,MatGridListModule, MatIconModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule, MatToolbarModule,MatChipsModule,MatIconModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule, MatToolbarModule,MatChipsModule,MatGridListModule,MatIconModule],
   providers: [FontService, MessageService],
   bootstrap: [AppComponent]
 })
