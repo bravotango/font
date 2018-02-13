@@ -51,15 +51,15 @@ export class ListComponent implements OnInit {
       this.columns = 5;
     }    
 
-    else if (element < 1280 && element > 960) {
+    else if (element < 1280 && element > 1024) {
       this.columns = 4;
     }
 
-    else if (element < 961 && element > 600) {
+    else if (element < 1025 && element > 840) {
       this.columns = 3;
     }
 
-    else if (element < 601 && element > 480) {
+    else if (element < 841 && element > 480) {
       this.columns = 2;
     }
     else {

@@ -20,6 +20,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatChipsModule,MatGridListModule} from '@angular/material';
+import { SearchComponent } from './search/search.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 
@@ -29,7 +31,9 @@ import { MatChipsModule,MatGridListModule} from '@angular/material';
 	ListComponent,
 	DashboardComponent,
 	FontComponent,
-	MessagesComponent
+	MessagesComponent,
+	SearchComponent,
+	NavigationComponent
   ],
   imports: [
 	BrowserModule,
