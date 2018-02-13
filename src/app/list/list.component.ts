@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Font } from '../font';
 import { FontService } from '../font.service';
 import { FONTS } from '../mock-fonts';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-list',
@@ -12,6 +13,8 @@ import { FONTS } from '../mock-fonts';
 export class ListComponent implements OnInit {
   
   filters = "random,dingbat,number,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".split(",");
+  
+  columns : number;
 
   fonts : Font[];
   constructor(    
@@ -20,6 +23,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.getList();
+    this.setNumberOfColumns(window.innerWidth);
   }
   getList(): void {
 
@@ -36,4 +40,36 @@ export class ListComponent implements OnInit {
   }
 
 
+
+
+  setNumberOfColumns(element) {
+    if (element > 1600) {
+      this.columns = 6;
+    }
+
+    else if (element < 1601 && element > 1280) {
+      this.columns = 5;
+    }    
+
+    else if (element < 1280 && element > 960) {
+      this.columns = 4;
+    }
+
+    else if (element < 961 && element > 600) {
+      this.columns = 3;
+    }
+
+    else if (element < 601 && element > 480) {
+      this.columns = 2;
+    }
+    else {
+      this.columns = 1;
+    }
+  }
+
+  getWindowSize(event) {
+    const element = event.target.innerWidth;
+    console.log(element);
+    this.setNumberOfColumns(element);    
+  }
 }

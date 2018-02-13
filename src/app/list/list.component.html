@@ -17,7 +17,7 @@
 </mat-chip-list>
 
 
-	<mat-grid-list cols="5" rowHeight="2.5:2" gutterSize="2">
+	<mat-grid-list cols="{{columns}}" rowHeight="2.5:2" gutterSize="2" (window:resize)="getWindowSize($event)">
 			<div  *ngFor="let font of fonts">
 		<mat-grid-tile>
 			<mat-grid-tile-header>
@@ -30,3 +30,10 @@
 		</mat-grid-tile>
 	</div>
 	</mat-grid-list>
+
+	<form action="server.cgi" method="post" enctype="multipart/form-data">
+		<input type="file" name="image" accept="image/*" capture="user">
+		<input type="submit" value="Upload">
+	</form>
+
+	
