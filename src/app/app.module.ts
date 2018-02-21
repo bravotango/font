@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { ListComponent }   from './list/list.component';
-import { FontDownloadComponent } from './font-download/font-download.component';
 import { FontComponent } from './font/font.component';
 import { MessagesComponent } from './messages/messages.component';
 
