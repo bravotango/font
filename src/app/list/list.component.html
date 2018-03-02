@@ -1,20 +1,22 @@
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Bangers|Alegreya+SC:400,700' rel='stylesheet' type='text/css'>
 
-<h2>{{font }} Font List</h2>
+<h1>Font List</h1>
 
-<mat-chip-list>
-	<div *ngFor="let font of filters">
-		&nbsp;<a href="list/{{font}}">{{font}}</a>&nbsp;
-	</div>
 
-	<ul class="filters">
-		<li class="badge" *ngFor="let filter of filters"
-		  [class.selected]="filter === selectedFilter"
-		  (click)="filterFontsByFilter(filter);">
-		  {{filter}}
-		</li>
-	</ul>
-</mat-chip-list>
+
+	<mat-chip-list>
+		<ul class="filters">
+			<li class="badge" *ngFor="let filter of filters"
+			[class.selected]="filter === selectedFilter"
+			(click)="filterFontsByFilter(filter);">
+			{{filter}}
+			</li>
+		</ul>
+	</mat-chip-list>
+
+
+
+
 
 
 	<mat-grid-list cols="{{columns}}" rowHeight="2:2" gutterSize="2" (window:resize)="getWindowSize($event)">

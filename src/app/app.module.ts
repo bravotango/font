@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, OnChanges } from '@angular/core';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
@@ -18,9 +18,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatChipsModule,MatGridListModule} from '@angular/material';
-import { SearchComponent } from './search/search.component';
+import { MatChipsModule,MatGridListModule } from '@angular/material';
+import { MatSliderModule } from '@angular/material/slider';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ColorsComponent } from './colors/colors.component';
 
 
 
@@ -31,17 +32,17 @@ import { NavigationComponent } from './navigation/navigation.component';
 	DashboardComponent,
 	FontComponent,
 	MessagesComponent,
-	SearchComponent,
-	NavigationComponent
+	NavigationComponent,
+	ColorsComponent
   ],
   imports: [
 	BrowserModule,
     NgbModule.forRoot(),
 	AppRoutingModule,
 	BrowserAnimationsModule,
-	MatCheckboxModule, MatButtonModule, MatMenuModule, MatCardModule,MatToolbarModule,MatChipsModule,MatGridListModule, MatIconModule
+	MatCheckboxModule, MatButtonModule, MatMenuModule, MatCardModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSliderModule,MatIconModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule, MatToolbarModule,MatChipsModule,MatGridListModule,MatIconModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule, MatToolbarModule,MatChipsModule,MatGridListModule,MatSliderModule,MatIconModule],
   providers: [FontService, MessageService],
   bootstrap: [AppComponent]
 })

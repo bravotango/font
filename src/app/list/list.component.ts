@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Font } from '../font';
 import { FontService } from '../font.service';
+import { Font } from '../font';
 import { FONTS } from '../mock-fonts';
 import { element } from 'protractor';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
+  providers: [FontService]
 })
 export class ListComponent implements OnInit {
   
