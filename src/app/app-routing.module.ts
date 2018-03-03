@@ -2,13 +2,12 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ListComponent }      from './list/list.component';
-import { DashboardComponent }   from './dashboard/dashboard.component';
 import { ColorsComponent }   from './colors/colors.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/list/random', pathMatch: 'full' },
-  { path: 'list/:char', component: ListComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: 'fonts', pathMatch: 'full' },
+  { path: 'fonts', component: ListComponent },
+  { path: 'font/list/:char', component: ListComponent },
   { path: 'colors/crayola', component: ColorsComponent }
 ];
 

@@ -28,7 +28,10 @@ export class ListComponent implements OnInit {
   }
   getList(): void {
 
-    const string = this.route.snapshot.paramMap.get('char');
+    
+   // var string = (this.route.snapshot.paramMap.get('char') ? this.route.snapshot.paramMap.get('char') : 'random');
+    var string = "random";
+    console.log('getList string= '+ string)
 
     this.fontService.getList(string.toString().toUpperCase())
         .subscribe(fonts => this.fonts = fonts);

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { DashboardComponent }   from './dashboard/dashboard.component';
 import { ListComponent }   from './list/list.component';
 import { FontComponent } from './font/font.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -27,13 +26,11 @@ import { ColorsComponent } from './colors/colors.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-	ListComponent,
-	DashboardComponent,
-	FontComponent,
-	MessagesComponent,
-	NavigationComponent,
-	ColorsComponent
+		AppComponent,
+		ListComponent,
+		MessagesComponent,
+		NavigationComponent,
+		ColorsComponent
   ],
   imports: [
 	BrowserModule,

@@ -2,25 +2,18 @@
 
 <h1>Font List</h1>
 
+<mat-chip-list>
+	<ul class="filters">
+		<li class="badge" *ngFor="let filter of filters"
+		[class.selected]="filter === selectedFilter"
+		(click)="filterFontsByFilter(filter);">
+		{{filter}}
+		</li>
+	</ul>
+</mat-chip-list>
 
-
-	<mat-chip-list>
-		<ul class="filters">
-			<li class="badge" *ngFor="let filter of filters"
-			[class.selected]="filter === selectedFilter"
-			(click)="filterFontsByFilter(filter);">
-			{{filter}}
-			</li>
-		</ul>
-	</mat-chip-list>
-
-
-
-
-
-
-	<mat-grid-list cols="{{columns}}" rowHeight="2:2" gutterSize="2" (window:resize)="getWindowSize($event)">
-			<div  *ngFor="let font of fonts">
+<mat-grid-list cols="{{columns}}" rowHeight="2:1.5" gutterSize="2" (window:resize)="getWindowSize($event)">
+	<div  *ngFor="let font of fonts">
 		<mat-grid-tile>
 			<mat-grid-tile-header>
 				<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )">{{font.name}}</a>
@@ -31,11 +24,4 @@
 			</a>
 		</mat-grid-tile>
 	</div>
-	</mat-grid-list>
-
-	<form action="server.cgi" method="post" enctype="multipart/form-data">
-		<input type="file" name="image" accept="image/*" capture="user">
-		<input type="submit" value="Upload">
-	</form>
-
-	
+</mat-grid-list>

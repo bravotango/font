@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { FontComponent } from './font/font.component';
-import { ColorsComponent } from './colors/colors.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +8,13 @@ import { ColorsComponent } from './colors/colors.component';
 })
 export class AppComponent {
   title = 'app';
+
+   year = getThisYear();
+
+
 }
-
-
+function getThisYear() {
+  var d = new Date();
+  var n = d.getFullYear();
+  return n;
+}
