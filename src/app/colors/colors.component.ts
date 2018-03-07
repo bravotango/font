@@ -91,7 +91,7 @@ export class ColorsComponent implements OnInit {
 
   setNumberOfColumns(element) {
     if (element > 1600) {
-      this.columns = 6;
+      this.columns = 5;
     }
 
     else if (element < 1601 && element > 1280) {
@@ -99,7 +99,7 @@ export class ColorsComponent implements OnInit {
     }    
 
     else if (element < 1280 && element > 1024) {
-      this.columns = 4;
+      this.columns = 3;
     }
 
     else if (element < 1025 && element > 840) {
@@ -116,7 +116,7 @@ export class ColorsComponent implements OnInit {
 
   getWindowSize(event) {
     const element = event.target.innerWidth;
-    console.log(element);
+    console.log('innerWidth' + event.target.innerWidth);
     this.setNumberOfColumns(element);    
   }
 

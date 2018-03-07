@@ -8,10 +8,8 @@ import { Router, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
-
+  shouldRun = true;
    year = getThisYear();
-
-
 }
 function getThisYear() {
   var d = new Date();

@@ -28,7 +28,6 @@ export class ListComponent implements OnInit {
   }
   getList(): void {
 
-    
    // var string = (this.route.snapshot.paramMap.get('char') ? this.route.snapshot.paramMap.get('char') : 'random');
     var string = "random";
     console.log('getList string= '+ string)
@@ -40,30 +39,36 @@ export class ListComponent implements OnInit {
   filterFontsByFilter(filter):void {
     this.fontService.getList(filter.toString().toUpperCase())
         .subscribe(fonts => this.fonts = fonts);
-  
   }
 
+  searchFonts(event) {
+    var string = event.target.value;
+    console.log('searchFonts string= '+ string)
 
+    this.fontService.searchFonts(string.toString().toUpperCase())
+        .subscribe(fonts => this.fonts = fonts);
+        console.log(this.fonts);
+  }
 
+  setNumberOfColumns(width) {
 
-  setNumberOfColumns(element) {
-    if (element > 1600) {
-      this.columns = 6;
+    if (width > 1600) {
+      this.columns = 5;
     }
 
-    else if (element < 1601 && element > 1280) {
-      this.columns = 5;
+    else if (width < 1601 && width > 1280) {
+      this.columns = 4;
     }    
 
-    else if (element < 1280 && element > 1024) {
+    else if (width < 1280 && width > 960) {
       this.columns = 4;
     }
 
-    else if (element < 1025 && element > 840) {
-      this.columns = 3;
+    else if (width < 961 && width > 840) {
+      this.columns = 2;
     }
 
-    else if (element < 841 && element > 480) {
+    else if (width < 841 && width > 480) {
       this.columns = 2;
     }
     else {
@@ -71,9 +76,10 @@ export class ListComponent implements OnInit {
     }
   }
 
-  getWindowSize(event) {
-    const element = event.target.innerWidth;
-    console.log(element);
-    this.setNumberOfColumns(element);    
+  getWindowSize() {
+    const width = window.innerWidth;
+    console.log('innerWidth' + width);
+    this.setNumberOfColumns(width);    
   }
+
 }

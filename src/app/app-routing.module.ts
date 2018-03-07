@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ListComponent }      from './list/list.component';
 import { ColorsComponent }   from './colors/colors.component';
+import { HtmlcodesComponent } from './htmlcodes/htmlcodes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'fonts', pathMatch: 'full' },
   { path: 'fonts', component: ListComponent },
   { path: 'font/list/:char', component: ListComponent },
-  { path: 'colors/crayola', component: ColorsComponent }
+  { path: 'colors/crayola', component: ColorsComponent },
+  { path: 'html/codes', component: HtmlcodesComponent }
 ];
 
 @NgModule({

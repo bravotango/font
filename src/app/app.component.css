@@ -1,8 +1,1 @@
-body {
-    background: whitesmoke url(http://sciaccaproperties.com/wp-content/uploads/2013/01/brushed-silver-metallic-background.jpg) no-repeat fixed top center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    color: #333;
-}
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';

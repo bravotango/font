@@ -1,5 +1,5 @@
 
-body {background-color:#000;}
+
 .selected {
     background-color: #CFD8DC !important;
     color: white;
@@ -60,7 +60,8 @@ body {background-color:#000;}
   mat-grid-tile mat-grid-tile-header {
     background: #fff;
   }
-
+.width-50 {width:50%;}
 
   .mat-chip-list div{text-align:justify}
   html body a{background-color:#000;}
+

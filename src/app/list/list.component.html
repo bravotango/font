@@ -1,6 +1,12 @@
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Bangers|Alegreya+SC:400,700' rel='stylesheet' type='text/css'>
 
-<h1>Font List</h1>
+<h1>Fonts</h1>
+
+
+
+<mat-form-field class="width-50">
+		<input matInput (keyup)="searchFonts($event);" placeholder="Search All Fonts by Name">
+</mat-form-field>
 
 <mat-chip-list>
 	<ul class="filters">
@@ -12,7 +18,7 @@
 	</ul>
 </mat-chip-list>
 
-<mat-grid-list cols="{{columns}}" rowHeight="2:1.5" gutterSize="2" (window:resize)="getWindowSize($event)">
+<mat-grid-list cols="{{columns}}" rowHeight="2:1.5" gutterSize="2" (window:resize)="getWindowSize()">
 	<div  *ngFor="let font of fonts">
 		<mat-grid-tile>
 			<mat-grid-tile-header>
