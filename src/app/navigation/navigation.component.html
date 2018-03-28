@@ -1,7 +1,19 @@
 <mat-toolbar>
+	
+	<span><img src="assets/x-downloaded-white-32.png"></span>&nbsp;
+
+	<div class="Righteous">BTgraphix</div>&nbsp;
+
 	<button mat-icon-button [matMenuTriggerFor]="menu">
 		<mat-icon>more_vert</mat-icon>
-	  </button>
+	</button>
+		
+
+	<span class="fill-remaining-space"></span>
+		
+
+
+
 	  <mat-menu #menu="matMenu">
 		<button mat-menu-item routerLink="/fonts">
 		  <mat-icon>view_module</mat-icon>
@@ -9,7 +21,7 @@
 		</button>		
 		<button mat-menu-item routerLink="/colors/crayola">
 		  <mat-icon>brush</mat-icon>
-		  <span>Crayola RGB Colors</span>
+		  <span>RGB Colors</span>
 		</button>
 		<button mat-menu-item routerLink="/html/codes">
 		  <mat-icon>translate</mat-icon>
@@ -17,4 +29,6 @@
 		</button>
 		
 	  </mat-menu>
-    </mat-toolbar>
+		</mat-toolbar>
+		
+		

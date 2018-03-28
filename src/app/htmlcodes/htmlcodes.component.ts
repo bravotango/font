@@ -7,7 +7,7 @@ import { MatTableDataSource, MatSort } from '@angular/material';
 @Component({
   selector: 'app-htmlcodes',
   templateUrl: './htmlcodes.component.html',
-  styleUrls: ['./htmlcodes.component.css'],
+  styles: [require('./htmlcodes.component.css')],
   providers: [HtmlCodeService]
 })
 export class HtmlcodesComponent implements OnInit {
@@ -17,13 +17,15 @@ export class HtmlcodesComponent implements OnInit {
   codes = HTMLCODES;
   columns : number;
   displayedColumns = ['code', 'name', 'symbol', 'description'];
-  dataSource = new MatTableDataSource(this.codes);
+  dataSource = new MatTableDataSource(HTMLCODES);
 
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
+
     console.log ('ngInit - entered')
     this.getCodes();
+    console.dir('dataSource - ' + this.dataSource);
   }
 
   ngAfterViewInit() {
@@ -35,6 +37,7 @@ export class HtmlcodesComponent implements OnInit {
   getCodes(): void {
     console.log ('getCodes - entered')
     this.codeService.getCodes().subscribe(codes => this.codes = codes);
+    console.log('codes : ' + this.codes[0].name);
   }
 
 }

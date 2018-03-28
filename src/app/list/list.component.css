@@ -1,4 +1,4 @@
-
+@import '../app.component.css';
 
 .selected {
     background-color: #CFD8DC !important;
@@ -26,9 +26,6 @@
   .filters li:hover {
     color: #fff;
     background-color: rgb(94, 0, 0);
-    padding: .4em .5em .5em .5em;
-    height:2em;
-
   }
   .filters .text {
     position: relative;
@@ -37,14 +34,15 @@
   .filters .badge {
     display: inline-block;
     font-size: small;
+    font-weight:normal;
     color: white;
-    padding: .5em;
+    padding: .3em .25em;
     background-color: rgb(0, 0, 0);
     position: relative;
     border-radius: 10em;
-    min-width: 28px;
+    min-width: 2em;
     text-align: center;
-    height:2.15em;
+    height:2em;
   }
 
   .mat-card-title {

@@ -4,7 +4,11 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
 import { Crayola } from './crayola';
-import { COLORS } from './mock-colors';
+import { CRAYOLA } from './mock-colors-crayola';
+
+import { Color } from './color';
+import { COLORS } from './mock-colors-256';
+
 import { MessageService } from './message.service';
 import { notEqual } from 'assert';
 
@@ -12,15 +16,24 @@ import { notEqual } from 'assert';
 
 export class ColorService {
 
-  Colors: Crayola[] = COLORS;
+  ColorsCrayola: Crayola[] = CRAYOLA;
+  Colors256: Color[] = COLORS;
 
   constructor(private messageService: MessageService) { }
 
-  getColors(): Observable<Crayola[]>  {
+  getColors()  {
     // Todo: send the message _after_ fetching the fonts
     this.messageService.add('getColors: entered');
-	console.log(COLORS)
-    return of(COLORS);
+
+    console.log(this.Colors256)
+    return of(this.Colors256);
+  }
+
+  getCrayolas()  {
+    // Todo: send the message _after_ fetching the fonts
+    this.messageService.add('getCrayolas: entered');
+    console.log(this.ColorsCrayola)
+    return of(this.ColorsCrayola);
   }
 
   filterColorsByRGB(c,r,g,b) {

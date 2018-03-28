@@ -1,4 +1,4 @@
-<h1>HTML Codes</h1>
+<header class="marketing-banner"><h1>HTML Codes</h1></header>
 
 <mat-table #table [dataSource]="dataSource" matSort>
   
@@ -7,7 +7,7 @@
   
       <!-- No. Column -->
       <ng-container matColumnDef="code">
-        <mat-header-cell *matHeaderCellDef mat-sort-header="a"> No. </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="a"> Code </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
       </ng-container>
   

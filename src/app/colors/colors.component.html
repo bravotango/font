@@ -1,43 +1,87 @@
-<h1>Crayola Colors</h1>
+
+<header class="marketing-banner"><h1>Colors</h1></header>
+
 <h2>RGB Filter</h2>
 
-<b>R</b>ed
-<mat-slider min="0" max="255" step="1" value={{red}} (change)="filterColor($event, 'red')"></mat-slider>{{red}}<br/>
 
+
+<b>R</b>ed
+
+<mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value={{red}} (change)="filterColor($event, 'red')"></mat-slider>
 
 <b>G</b>reen
-<mat-slider min="0" max="255" step="1" value="{{green}}" (change)="filterColor($event, 'green')"></mat-slider>{{green}}<br/>
-
+<mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{green}}" (change)="filterColor($event, 'green')"></mat-slider>
 
 <b>B</b>lue
-<mat-slider min="0" max="255" step="1" value="{{blue}}" (change)="filterColor($event, 'blue')"></mat-slider>{{blue}}<br/>
+<mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{blue}}" (change)="filterColor($event, 'blue')"></mat-slider> 
 
-<mat-grid-list cols="{{columns}}" rowHeight="2:2" gutterSize="2" (window:resize)="getWindowSize($event)">
-        <div *ngFor="let color of colors">
-          <mat-grid-tile [ngStyle]="setMyHeader(color)">
-            <mat-grid-tile-header [ngStyle]="setMyHeader(color)">
-                {{color.name}}
-            </mat-grid-tile-header>
-            <mat-icon [ngStyle]="setMyStyles(color)">opacity</mat-icon>
-            RGB: {{color.rgb}}
-            <br/>
-                HEX: {{color.hex}}
-          </mat-grid-tile>
-        </div>
-      </mat-grid-list>
+<mat-chip-list>
+        <mat-chip  [ngStyle]="setMyCustomColor(red, green, blue)">RGB: ({{red}}, {{green}}, {{blue}})
+        </mat-chip>
+</mat-chip-list>
+
+
+
+
+<mat-tab-group>
+        <mat-tab label="256 Web Safe Colors">
+                <h2>256 Web Safe Colors</h2>
+
+
+                <mat-grid-list cols="{{columns}}" rowHeight="5:3" gutterSize="2" (window:resize)="getWindowSize($event)">
+                    <div *ngFor="let color of colors">
+                        <mat-grid-tile [ngStyle]="setMyHeader(color)">
+                        <mat-grid-tile-header [ngStyle]="setMyHeader(color)">
+                            {{color.name}}: {{color.hex}}
+                        </mat-grid-tile-header>
+            
+                        RGB: {{color.rgb}}
+            
+                        </mat-grid-tile>
+                    </div>
+                </mat-grid-list>
+
+        </mat-tab>
+        <mat-tab label="Crayola Colors">
+                <h2>Crayola Colors</h2>
+
+
+                <mat-grid-list cols="{{columns}}" rowHeight="5:3" gutterSize="2" (window:resize)="getWindowSize($event)">
+                    <div *ngFor="let crayon of crayola">
+                        <mat-grid-tile [ngStyle]="setMyHeader(crayon)">
+                        <mat-grid-tile-header [ngStyle]="setMyHeader(crayon)">
+                            {{crayon.name}}: {{crayon.hex}}
+                        </mat-grid-tile-header>
+            
+                        RGB: {{crayon.rgb}}
+            
+                        </mat-grid-tile>
+                    </div>
+                </mat-grid-list>
+
+        </mat-tab>
+      </mat-tab-group>
+
+
+
+
+
 <mat-card>
     <h2>What does RGB value mean<a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">?</a></h2>
     <p>The RGB color model is an additive color model in which red, green and blue light are added together in various ways to reproduce a broad array of colors. The name of the model comes from the initials of the three additive primary colors, red, green, and blue.</p>
 </mat-card>
+
 <br/>
+
 <mat-card>
 <h2>Hexadecimal colors</h2>
-<p>The <b>#RRGGBB</b> number represents the two-digit hexadecimal numbers for <i>red</i>, <i>green</i>, and <i>blue</i> values of a color.</p>
+    <p>The <b>#RRGGBB</b> number represents the two-digit hexadecimal numbers for <i>red</i>, <i>green</i>, and <i>blue</i> values of a color.</p>
 
-<p><b>Hex numbers use 16 digits:</b>
-0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
-<p>Zero, "0", is the smallest representations of a color. It's almost the total absence of color. F is 15 times the intensity of the color of 0. Combinations of these digits create different shades of a particular color. Double Zero, "00," is equal to zero hue. FF is equal to a pure color.</p>
+    <p><b>Hex numbers use 16 digits:</b>
+    0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+    <p>Zero, "0", is the smallest representations of a color. It's almost the total absence of color. F is 15 times the intensity of the color of 0. Combinations of these digits create different shades of a particular color. Double Zero, "00," is equal to zero hue. FF is equal to a pure color.</p>
 </mat-card>
+
 <!--
 
 <div *ngFor="let color of colors">

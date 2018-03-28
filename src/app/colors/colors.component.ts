@@ -1,31 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Crayola } from '../crayola';
+import { Color } from '../color';
 import { ColorService } from '../color.service';
-import { COLORS } from '../mock-colors';
+import { CRAYOLA } from '../mock-colors-crayola';
+import { COLORS } from '../mock-colors-256';
 import { element } from 'protractor';
 
 @Component({
   selector: 'app-colors',
   templateUrl: './colors.component.html',
-  styleUrls: ['./colors.component.css'],
+  styles: [require('./colors.component.css')],
   providers: [ColorService]
 })
 export class ColorsComponent implements OnInit {
 
   colors = COLORS;
+  crayola = CRAYOLA;
   red = 255;
   green = 255;
   blue = 255;
+  customHex ="";
+  swapColors = true;
+  swapCrayola = true;
 
   constructor(private colorService: ColorService) { }
   columns : number;
 
   ngOnInit() {
-    this.getColors();
+    this.getCrayolas();
     this.setNumberOfColumns(window.innerWidth);
   }
 
+  getCrayolas(): void {
+    this.colorService.getCrayolas().subscribe(crayola => this.crayola = crayola);
+  }
 
   getColors(): void {
     this.colorService.getColors().subscribe(colors => this.colors = colors);
@@ -45,48 +54,56 @@ export class ColorsComponent implements OnInit {
     return  { 'background-color': color.hex , 'color' : fontColor};
   }
 
+
+  setMyCustomColor(r,g,b) {
+    var rgb = "rgb(" + r + "," + g + "," + b + ")";
+    var customTextColor = "#fff";
+    //console.log('rgb: ' + rgb);
+    this.rgbToHex(r, g, b);
+    //console.log('r: ' +r + ', g: ' + g + ', b: ' + b);
+    var colorNumber = (r*0.299 + g*0.587 + b*0.114) ;
+    //console.log(colorNumber);
+    if ((colorNumber) > 186) { customTextColor = "#000" }
+    return {'background-color': rgb , 'color' : customTextColor}
+  }
+
+
   setTextToBlackOrWhite(color) {
     var textColor = "#fff" // default to white
     var rgb = color.rgb;
-
+    //console.log('rgb: ' + rgb);
     var rgbArray = rgb.match(/\d+/g);
     var red = rgbArray[0];
     var green = rgbArray[1];
     var blue = rgbArray[2];
 
-    if ((red*0.299 + green*0.587 + blue*0.114) > 186) { textColor = "#000" }
+    if ((red*0.299 + green*0.587 + blue*0.114) > 150) { textColor = "#000" } // was originally set to  > 186
 
     return textColor; 
   }
 
+componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+rgbToHex(r, g, b) {
+  this.customHex = ("#" + this.componentToHex(r) + this.componentToHex(g) + this.componentToHex(b));
+}
 
 
-  filterColor(event, color){ 
-    console.log('value: ' + event.value);
+filterColor(event, color){ 
+ // console.log('value: ' + event.value);
 
-    if (color=='red' ){ this.red = event.value }
-    if (color=='green' ){ this.green = event.value }
-    if (color=='blue' ){ this.blue = event.value }
+  if (color=='red' ){ this.red = event.value }
+  if (color=='green' ){ this.green = event.value }
+  if (color=='blue' ){ this.blue = event.value }
 
-    this.colors = this.colorService.filterColorsByRGB(COLORS,this.red,this.green,this.blue);
+  this.colors = this.colorService.filterColorsByRGB(COLORS,this.red,this.green,this.blue);
+  this.crayola = this.colorService.filterColorsByRGB(CRAYOLA,this.red,this.green,this.blue);
 
-  }
+}
 
-  pickTextColorBasedOnBgColorAdvanced(bgColor, lightColor, darkColor) {
-    var color = (bgColor.charAt(0) === '#') ? bgColor.substring(1, 7) : bgColor;
-    var r = parseInt(color.substring(0, 2), 16); // hexToR
-    var g = parseInt(color.substring(2, 4), 16); // hexToG
-    var b = parseInt(color.substring(4, 6), 16); // hexToB
-    var uicolors = [r / 255, g / 255, b / 255];
-    var c = uicolors.map((col) => {
-      if (col <= 0.03928) {
-        return col / 12.92;
-      }
-      return Math.pow((col + 0.055) / 1.055, 2.4);
-    });
-    var L = (0.2126 * c[0]) + (0.7152 * c[1]) + (0.0722 * c[2]);
-    return (L > 0.179) ? darkColor : lightColor;
-  }
 
 
   setNumberOfColumns(element) {

@@ -1,1 +1,15 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+  .marketing-banner {background-color: #900000;padding: 16px;color:#fff;}
+  
+.Acme{font-family: 'Acme', sans-serif;}
+.Righteous{font-family: 'Righteous', cursive;}
+.Boogaloo{font-family: 'Boogaloo', cursive;}
+.Rancho{font-family: 'Rancho', cursive;}
+.Crushed{font-family: 'Crushed', cursive;}

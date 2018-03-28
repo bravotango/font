@@ -8,12 +8,13 @@ import { element } from 'protractor';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
+  styles: [require('./list.component.css')],
   providers: [FontService]
 })
 export class ListComponent implements OnInit {
   
-  filters = "random,dingbat,number,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".split(",");
+  filters = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".split(",");
+  moreFilters = "random,dingbat,number".split(",");
   
   columns : number;
 
@@ -60,15 +61,15 @@ export class ListComponent implements OnInit {
       this.columns = 4;
     }    
 
-    else if (width < 1280 && width > 960) {
+    else if (width < 1280 && width > 992) {
       this.columns = 4;
     }
 
-    else if (width < 961 && width > 840) {
-      this.columns = 2;
+    else if (width < 993 && width > 767) {
+      this.columns = 3;
     }
 
-    else if (width < 841 && width > 480) {
+    else if (width < 768 && width > 400) {
       this.columns = 2;
     }
     else {

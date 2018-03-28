@@ -1,6 +1,6 @@
 import { Crayola } from "./crayola";
 
-export const COLORS:Crayola[] = [
+export const CRAYOLA:Crayola[] = [
     {
         "hex": "#EFDECD", 
         "name": "Almond", 

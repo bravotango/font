@@ -1,2 +1,3 @@
 
   button:focus {outline-color:transparent;}
+  @import '../app.component.css';
