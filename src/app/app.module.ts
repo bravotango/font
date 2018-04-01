@@ -16,6 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule, MatButtonToggleGroup, MatIcon, MatIconModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
@@ -25,7 +26,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule} from '@angular/material/table';
-
 
 
 import { NavigationComponent } from './navigation/navigation.component';
@@ -48,9 +48,9 @@ import { HtmlcodesComponent } from './htmlcodes/htmlcodes.component';
     NgbModule.forRoot(),
 	AppRoutingModule,
 	BrowserAnimationsModule,
-	MatCheckboxModule, MatFormFieldModule, MatButtonModule, MatInputModule,MatMenuModule, MatCardModule,MatRadioModule,MatTabsModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSelectModule,MatSliderModule,MatSidenavModule,MatTableModule,MatIconModule
+	MatCheckboxModule, MatFormFieldModule, MatButtonModule, MatExpansionModule, MatInputModule,MatMenuModule, MatCardModule,MatRadioModule,MatTabsModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSelectModule,MatSliderModule,MatSidenavModule,MatTableModule,MatIconModule
   ],
-  exports: [MatButtonModule, MatInputModule, MatCheckboxModule, MatFormFieldModule, MatMenuModule, MatCardModule, MatRadioModule,MatTabsModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSelectModule,MatSliderModule,MatSidenavModule,MatTableModule,MatIconModule],
+  exports: [MatButtonModule, MatExpansionModule, MatInputModule, MatCheckboxModule, MatFormFieldModule, MatMenuModule, MatCardModule, MatRadioModule,MatTabsModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSelectModule,MatSliderModule,MatSidenavModule,MatTableModule,MatIconModule],
   providers: [MessageService],
   bootstrap: [AppComponent]
 })

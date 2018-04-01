@@ -1,34 +1,41 @@
 
 <header class="marketing-banner"><h1>Colors</h1></header>
 
-<h2>RGB Filter</h2>
+<mat-accordion>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header><mat-chip-list>RGB Filter&nbsp;<mat-chip [ngStyle]="setMyCustomColor(red, green, blue)">{{red}}, {{green}}, {{blue}}</mat-chip>&nbsp;</mat-chip-list></mat-expansion-panel-header>
+  
+
+      <b>R</b>ed
+      <mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value={{red}} (change)="filterColor($event, 'red')"></mat-slider>
+      
+      <b>G</b>reen
+      <mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{green}}" (change)="filterColor($event, 'green')"></mat-slider>
+      
+      <b>B</b>lue
+      <mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{blue}}" (change)="filterColor($event, 'blue')"></mat-slider> 
+      
+
+      
+  
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+
+<br/>
 
 
 
-<b>R</b>ed
-
-<mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value={{red}} (change)="filterColor($event, 'red')"></mat-slider>
-
-<b>G</b>reen
-<mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{green}}" (change)="filterColor($event, 'green')"></mat-slider>
-
-<b>B</b>lue
-<mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{blue}}" (change)="filterColor($event, 'blue')"></mat-slider> 
-
-<mat-chip-list>
-        <mat-chip  [ngStyle]="setMyCustomColor(red, green, blue)">RGB: ({{red}}, {{green}}, {{blue}})
-        </mat-chip>
-</mat-chip-list>
 
 
-
-
-<mat-tab-group>
+<mat-tab-group class="h2-margin-bottom">
         <mat-tab label="256 Web Safe Colors">
                 <h2>256 Web Safe Colors</h2>
 
 
-                <mat-grid-list cols="{{columns}}" rowHeight="5:3" gutterSize="2" (window:resize)="getWindowSize($event)">
+                <mat-grid-list cols="{{columns}}" rowHeight="100px" gutterSize="2" (window:resize)="getWindowSize($event)">
                     <div *ngFor="let color of colors">
                         <mat-grid-tile [ngStyle]="setMyHeader(color)">
                         <mat-grid-tile-header [ngStyle]="setMyHeader(color)">
@@ -46,7 +53,7 @@
                 <h2>Crayola Colors</h2>
 
 
-                <mat-grid-list cols="{{columns}}" rowHeight="5:3" gutterSize="2" (window:resize)="getWindowSize($event)">
+                <mat-grid-list cols="{{columns}}" rowHeight="100px" gutterSize="2" (window:resize)="getWindowSize($event)">
                     <div *ngFor="let crayon of crayola">
                         <mat-grid-tile [ngStyle]="setMyHeader(crayon)">
                         <mat-grid-tile-header [ngStyle]="setMyHeader(crayon)">

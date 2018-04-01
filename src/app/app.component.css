@@ -6,10 +6,12 @@
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
   }
-  .marketing-banner {background-color: #900000;padding: 16px;color:#fff;}
+  .marketing-banner {background-color: #900000;padding: 8px 16px;color:#fff;}
   
 .Acme{font-family: 'Acme', sans-serif;}
 .Righteous{font-family: 'Righteous', cursive;}
 .Boogaloo{font-family: 'Boogaloo', cursive;}
 .Rancho{font-family: 'Rancho', cursive;}
 .Crushed{font-family: 'Crushed', cursive;}
+
+h2{margin-top: 25px;margin-bottom:25px;font-family:'Acme'}  /* place class="h2-margin-bottom" on containers containing h2 elements to add margins  */

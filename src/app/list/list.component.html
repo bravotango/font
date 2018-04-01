@@ -2,23 +2,37 @@
 <header class="marketing-banner"><h1>Fonts</h1></header>
 
 
+<mat-accordion>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>Font filters</mat-expansion-panel-header>
+  
+
+	  <mat-chip-list>
+		<ul class="filters">
+			<li class="badge" *ngFor="let filter of filters"
+			[class.selected]="filter === selectedFilter"
+			(click)="filterFontsByFilter(filter);">
+			{{filter}}
+			</li>
+		</ul>
+	</mat-chip-list>
 
 
-<mat-form-field class="width-50">
+	<mat-form-field class="width-50">
 		<input matInput (keyup)="searchFonts($event);" placeholder="Search All Fonts by Name">
-</mat-form-field>
+	</mat-form-field>
+</mat-expansion-panel>
+	
 
-<mat-chip-list>
-	<ul class="filters">
-		<li class="badge" *ngFor="let filter of filters"
-		[class.selected]="filter === selectedFilter"
-		(click)="filterFontsByFilter(filter);">
-		{{filter}}
-		</li>
-	</ul>
-</mat-chip-list>
+	
+	
+  </mat-accordion>
 
-<mat-grid-list cols="{{columns}}" rowHeight="2:1.5" gutterSize="2" (window:resize)="getWindowSize()">
+
+
+
+<mat-grid-list cols="{{columns}}" rowHeight="150px" gutterSize="2" (window:resize)="getWindowSize()">
 	<div  *ngFor="let font of fonts">
 		<mat-grid-tile>
 			<mat-grid-tile-header>
