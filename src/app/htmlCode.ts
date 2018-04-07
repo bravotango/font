@@ -5,4 +5,5 @@ export class HtmlCode {
   name: string;
   symbol: string;
   description: string;
+  _data:string;
 }

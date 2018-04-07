@@ -1,1 +1,8 @@
 @import '../app.component.css';
+
+  
+  .mat-header-cell.mat-sort-header-sorted {
+    color: black;
+  }
+
+  .width-100 {width:100%;}

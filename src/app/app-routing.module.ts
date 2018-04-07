@@ -6,7 +6,7 @@ import { ColorsComponent }   from './colors/colors.component';
 import { HtmlcodesComponent } from './htmlcodes/htmlcodes.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'fonts', pathMatch: 'full' },
+  { path: '', redirectTo: '/fonts', pathMatch: 'full' },
   { path: 'fonts', component: ListComponent },
   { path: 'font/list/:char', component: ListComponent },
   { path: 'colors/crayola', component: ColorsComponent },

@@ -1,5 +1,5 @@
 
-<header class="marketing-banner"><h1>Colors</h1></header>
+<header class="marketing-banner"><h1>Colors Codes</h1></header>
 
 <mat-accordion>
 
@@ -7,15 +7,20 @@
       <mat-expansion-panel-header><mat-chip-list>RGB Filter&nbsp;<mat-chip [ngStyle]="setMyCustomColor(red, green, blue)">{{red}}, {{green}}, {{blue}}</mat-chip>&nbsp;</mat-chip-list></mat-expansion-panel-header>
   
 
-      <b>R</b>ed
+<span class="nowrap">
+    <b>R</b>ed
       <mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value={{red}} (change)="filterColor($event, 'red')"></mat-slider>
-      
-      <b>G</b>reen
-      <mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{green}}" (change)="filterColor($event, 'green')"></mat-slider>
-      
-      <b>B</b>lue
-      <mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{blue}}" (change)="filterColor($event, 'blue')"></mat-slider> 
-      
+
+</span>
+<span class="nowrap">
+        <b>G</b>reen
+        <mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{green}}" (change)="filterColor($event, 'green')"></mat-slider>
+    </span>
+    <span class="nowrap">
+        <b>B</b>lue
+        <mat-slider thumbLabel tickInterval="1" min="0" max="255" step="1" value="{{blue}}" (change)="filterColor($event, 'blue')"></mat-slider> 
+
+    </span>
 
       
   
@@ -25,9 +30,6 @@
 
 
 <br/>
-
-
-
 
 
 <mat-tab-group class="h2-margin-bottom">
@@ -71,7 +73,7 @@
 
 
 
-
+<br/>
 
 <mat-card>
     <h2>What does RGB value mean<a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">?</a></h2>

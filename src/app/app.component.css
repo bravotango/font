@@ -14,4 +14,7 @@
 .Rancho{font-family: 'Rancho', cursive;}
 .Crushed{font-family: 'Crushed', cursive;}
 
+h1{margin-top: 5px;margin-bottom:5px;font-family:'Righteous'}  /* place class="h2-margin-bottom" on containers containing h2 elements to add margins  */
 h2{margin-top: 25px;margin-bottom:25px;font-family:'Acme'}  /* place class="h2-margin-bottom" on containers containing h2 elements to add margins  */
+
+.nowrap {white-space: nowrap;}

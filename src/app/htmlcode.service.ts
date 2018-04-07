@@ -12,14 +12,33 @@ import { notEqual } from 'assert';
 
 export class HtmlCodeService {
 
-  Codes: HtmlCode[] = HTMLCODES;
+  Codes = HTMLCODES;
 
   constructor(private messageService: MessageService) { }
 
   getCodes(): Observable<HtmlCode[]>  {
-    // Todo: send the message _after_ fetching the fonts
+
     this.messageService.add('getCodes: entered');
-	console.log(this.Codes)
+	  console.log(this.Codes)
     return of(this.Codes);
+  }
+
+  searchAllCodeFields(string): Observable<HtmlCode[]> {
+
+    this.messageService.add('service - searchAllCodeFields: entered');
+    console.log('service - searchAllCodeFields: entered');
+  
+    if (string) {
+      this.Codes = this.filterCodesBySearchString(string);
+    } 
+    console.log('service - searchAllCodeFields: leaving with codes = ' + this.Codes);
+    return of(this.Codes);
+  }
+
+  filterCodesBySearchString(string:string){
+    //if font.name starts with matching parameter 'char' add to array
+    this.messageService.add('service - filterFontsBySearchString: filtered by ' + string);
+    console.log('service - filterFontsBySearchString entered, string = ' + string);
+    return HTMLCODES.filter(HTMLCODES => (HTMLCODES.code.indexOf(string) !== -1 || HTMLCODES.name.toUpperCase().indexOf(string) !== -1) || HTMLCODES.symbol.toUpperCase().indexOf(string) !== -1  || HTMLCODES.description.toUpperCase().indexOf(string) !== -1);
   }
 }

@@ -8,7 +8,7 @@ import { element } from 'protractor';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styles: [require('./list.component.css')],
+  styleUrls: ['./list.component.css'],
   providers: [FontService]
 })
 export class ListComponent implements OnInit {
@@ -22,7 +22,7 @@ export class ListComponent implements OnInit {
   constructor(    
     private route: ActivatedRoute,
     private fontService: FontService) { }
-
+    
   ngOnInit() {
     this.getList();
     this.setNumberOfColumns(window.innerWidth);

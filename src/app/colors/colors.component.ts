@@ -10,7 +10,7 @@ import { element } from 'protractor';
 @Component({
   selector: 'app-colors',
   templateUrl: './colors.component.html',
-  styles: [require('./colors.component.css')],
+  styleUrls: ['./colors.component.css'],
   providers: [ColorService]
 })
 export class ColorsComponent implements OnInit {
