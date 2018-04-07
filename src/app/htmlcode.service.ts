@@ -16,14 +16,14 @@ export class HtmlCodeService {
 
   constructor(private messageService: MessageService) { }
 
-  getCodes(): Observable<HtmlCode[]>  {
+  getCodes() {
 
     this.messageService.add('getCodes: entered');
 	  console.log(this.Codes)
     return of(this.Codes);
   }
 
-  searchAllCodeFields(string): Observable<HtmlCode[]> {
+  searchAllCodeFields(string) {
 
     this.messageService.add('service - searchAllCodeFields: entered');
     console.log('service - searchAllCodeFields: entered');

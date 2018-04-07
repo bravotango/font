@@ -1,6 +1,6 @@
 import { HtmlCode } from "./htmlCode"
 
-export const HTMLCODES:HtmlCode[] = [
+export const HTMLCODES = [
  
     {
         "code": "00",
