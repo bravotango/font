@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, OnInit, NgModule, OnChanges } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
@@ -51,7 +52,7 @@ import { HtmlcodesComponent } from './htmlcodes/htmlcodes.component';
 	MatCheckboxModule, MatFormFieldModule, MatButtonModule, MatExpansionModule, MatInputModule,MatMenuModule, MatCardModule,MatRadioModule,MatTabsModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSelectModule,MatSliderModule,MatSidenavModule,MatTableModule,MatIconModule
   ],
   exports: [MatButtonModule, MatExpansionModule, MatInputModule, MatCheckboxModule, MatFormFieldModule, MatMenuModule, MatCardModule, MatRadioModule,MatTabsModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSelectModule,MatSliderModule,MatSidenavModule,MatTableModule,MatIconModule],
-  providers: [MessageService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},MessageService],
   bootstrap: [AppComponent]
 })
 
