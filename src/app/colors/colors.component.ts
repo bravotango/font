@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Crayola } from '../crayola';
 import { Color } from '../color';
-import { ColorService } from '../color.service';
+import { ColorService } from '../services/color.service';
 import { CRAYOLA } from '../mock-colors-crayola';
 import { COLORS } from '../mock-colors-256';
 import { element } from 'protractor';

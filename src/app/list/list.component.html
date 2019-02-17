@@ -6,27 +6,20 @@
 
     <mat-expansion-panel>
       <mat-expansion-panel-header>Font filters</mat-expansion-panel-header>
-  
+		<mat-chip-list>
+			<ul class="filters">
+				<li class="badge" *ngFor="let filter of filters"
+				[class.selected]="filter === selectedFilter"
+				(click)="filterFontsByFilter(filter);">
+				{{filter}}
+				</li>
+			</ul>
+		</mat-chip-list>
+		<mat-form-field class="width-100">
+			<input matInput (keyup)="searchFonts($event);" placeholder="Search All Fonts by Name">
+		</mat-form-field>
+	</mat-expansion-panel>
 
-	  <mat-chip-list>
-		<ul class="filters">
-			<li class="badge" *ngFor="let filter of filters"
-			[class.selected]="filter === selectedFilter"
-			(click)="filterFontsByFilter(filter);">
-			{{filter}}
-			</li>
-		</ul>
-	</mat-chip-list>
-
-
-	<mat-form-field class="width-100">
-		<input matInput (keyup)="searchFonts($event);" placeholder="Search All Fonts by Name">
-	</mat-form-field>
-</mat-expansion-panel>
-	
-
-	
-	
   </mat-accordion>
 
 
@@ -36,10 +29,10 @@
 	<div  *ngFor="let font of fonts">
 		<mat-grid-tile>
 			<mat-grid-tile-header>
-				<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )">{{font.name}}</a>
+				<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.name )">{{font.name}}</a>
 			</mat-grid-tile-header>
 
-			<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.id )"> 
+			<a href="//www.btgraphix.com/f2/zips/{{font.zip}}" ng-title="font.name | uppercase" on-click="logDownload( font.name )"> 
 				<img src="http://www.btgraphix.com/f2/images/{{font.img}}" alt="download zip file" width="150" height="40">
 			</a>
 		</mat-grid-tile>

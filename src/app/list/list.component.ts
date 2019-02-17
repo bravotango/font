@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FontService } from '../font.service';
+import { FontService } from '../services/font.service';
 import { Font } from '../font';
 import { FONTS } from '../mock-fonts';
 import { element } from 'protractor';
+import { AppInsightsService } from '../services/app-insights.service';
 
 @Component({
   selector: 'app-list',
@@ -21,7 +22,9 @@ export class ListComponent implements OnInit {
   fonts : Font[];
   constructor(    
     private route: ActivatedRoute,
-    private fontService: FontService) { }
+    private fontService: FontService,
+    private appInsightsService: AppInsightsService
+  ) { }
     
   ngOnInit() {
     this.getList();
@@ -76,10 +79,14 @@ export class ListComponent implements OnInit {
       this.columns = 1;
     }
   }
+  
+  logDownload(fontName){
+    this.appInsightsService.logPageEvent('download:' + fontName);
+  }
 
   getWindowSize() {
     const width = window.innerWidth;
-    console.log('innerWidth' + width);
+    //console.log('innerWidth' + width);
     this.setNumberOfColumns(width);    
   }
 

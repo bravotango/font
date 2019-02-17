@@ -11,7 +11,7 @@ import { ListComponent }   from './list/list.component';
 import { MessagesComponent } from './messages/messages.component';
 
 import { MatRadioModule } from '@angular/material/radio';
-import { MessageService } from './message.service';
+import { MessageService } from './services/message.service';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { MatCheckboxModule, MatButtonToggleGroup, MatIcon, MatIconModule } from '@angular/material';
@@ -33,6 +33,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ColorsComponent } from './colors/colors.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HtmlcodesComponent } from './htmlcodes/htmlcodes.component';
+import { AppInsightsService } from './services/app-insights.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { HtmlcodesComponent } from './htmlcodes/htmlcodes.component';
 	MatCheckboxModule, MatFormFieldModule, MatButtonModule, MatExpansionModule, MatInputModule,MatMenuModule, MatCardModule,MatRadioModule,MatTabsModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSelectModule,MatSliderModule,MatSidenavModule,MatTableModule,MatIconModule
   ],
   exports: [MatButtonModule, MatExpansionModule, MatInputModule, MatCheckboxModule, MatFormFieldModule, MatMenuModule, MatCardModule, MatRadioModule,MatTabsModule,MatToolbarModule,MatChipsModule,MatGridListModule,MatSelectModule,MatSliderModule,MatSidenavModule,MatTableModule,MatIconModule],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},MessageService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},MessageService, AppInsightsService],
   bootstrap: [AppComponent]
 })
 

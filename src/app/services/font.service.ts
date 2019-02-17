@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
-import { Font } from './font';
-import { FONTS } from './mock-fonts';
+import { Font } from '../font';
+import { FONTS } from '../mock-fonts';
 import { MessageService } from './message.service';
 import { notEqual } from 'assert';
 

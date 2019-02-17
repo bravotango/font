@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
-import { Crayola } from './crayola';
-import { CRAYOLA } from './mock-colors-crayola';
+import { Crayola } from '../crayola';
+import { CRAYOLA } from '../mock-colors-crayola';
 
-import { Color } from './color';
-import { COLORS } from './mock-colors-256';
+import { Color } from '../color';
+import { COLORS } from '../mock-colors-256';
 
 import { MessageService } from './message.service';
 import { notEqual } from 'assert';

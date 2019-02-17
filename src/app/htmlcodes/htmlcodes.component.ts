@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { HtmlCode } from '../htmlCode';
 import { HTMLCODES } from '../mock-html-codes';
-import { HtmlCodeService } from '../htmlcode.service';
+import { HtmlCodeService } from '../services/htmlcode.service';
 import { MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
